@@ -1,0 +1,69 @@
+{
+  "name": "@sipe-team/grid",
+  "description": "Grid for Sipe Design System",
+  "version": "0.0.0",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/sipe-team/3-2_side"
+  },
+  "type": "module",
+  "exports": "./src/index.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsup",
+    "build:storybook": "storybook build",
+    "dev:storybook": "storybook dev -p 6006",
+    "lint:biome": "pnpm exec biome lint",
+    "lint:eslint": "pnpm exec eslint --flag unstable_ts_config",
+    "test": "vitest",
+    "typecheck": "tsc",
+    "prepack": "pnpm run build"
+  },
+  "devDependencies": {
+    "@faker-js/faker": "^9.2.0",
+    "@storybook/addon-essentials": "catalog:",
+    "@storybook/addon-interactions": "catalog:",
+    "@storybook/addon-links": "catalog:",
+    "@storybook/blocks": "catalog:",
+    "@storybook/react": "catalog:",
+    "@storybook/react-vite": "catalog:",
+    "@storybook/test": "catalog:",
+    "@testing-library/jest-dom": "catalog:",
+    "@testing-library/react": "catalog:",
+    "@types/react": "^18.3.12",
+    "happy-dom": "catalog:",
+    "react": "^18.3.1",
+    "storybook": "catalog:",
+    "tsup": "catalog:",
+    "typescript": "catalog:",
+    "vitest": "catalog:"
+  },
+  "peerDependencies": {
+    "react": ">= 18"
+  },
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://npm.pkg.github.com",
+    "exports": {
+      ".": {
+        "import": {
+          "types": "./dist/index.d.ts",
+          "default": "./dist/index.js"
+        },
+        "require": {
+          "types": "./dist/index.d.cts",
+          "default": "./dist/index.cjs"
+        }
+      },
+      "./styles.css": "./dist/index.css"
+    }
+  },
+  "sideEffects": false,
+  "dependencies": {
+    "@radix-ui/react-slot": "^1.1.0",
+    "clsx": "^2.1.1"
+  }
+}

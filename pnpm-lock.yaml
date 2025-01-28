@@ -33,15 +33,9 @@ catalogs:
     '@testing-library/react':
       specifier: ^16.0.1
       version: 16.0.1
-    '@vitest/coverage-v8':
-      specifier: ^2.1.8
-      version: 2.1.8
     happy-dom:
       specifier: ^15.7.4
       version: 15.11.7
-    knip:
-      specifier: ^5.34.1
-      version: 5.39.2
     storybook:
       specifier: ^8.4.7
       version: 8.5.0
@@ -760,6 +754,67 @@ importers:
       vitest:
         specifier: 'catalog:'
         version: 2.1.8(@types/node@22.10.1)(happy-dom@15.11.7)(terser@5.37.0)
+
+  packages/grid:
+    dependencies:
+      '@radix-ui/react-slot':
+        specifier: ^1.1.0
+        version: 1.1.0(@types/react@18.3.13)(react@18.3.1)
+      clsx:
+        specifier: ^2.1.1
+        version: 2.1.1
+    devDependencies:
+      '@faker-js/faker':
+        specifier: ^9.2.0
+        version: 9.2.0
+      '@storybook/addon-essentials':
+        specifier: 'catalog:'
+        version: 8.4.6(@types/react@18.3.13)(storybook@8.4.6(prettier@2.8.8))
+      '@storybook/addon-interactions':
+        specifier: 'catalog:'
+        version: 8.4.6(storybook@8.4.6(prettier@2.8.8))
+      '@storybook/addon-links':
+        specifier: 'catalog:'
+        version: 8.4.6(react@18.3.1)(storybook@8.4.6(prettier@2.8.8))
+      '@storybook/blocks':
+        specifier: 'catalog:'
+        version: 8.4.6(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.4.6(prettier@2.8.8))
+      '@storybook/react':
+        specifier: 'catalog:'
+        version: 8.4.6(@storybook/test@8.4.6(storybook@8.4.6(prettier@2.8.8)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(storybook@8.4.6(prettier@2.8.8))(typescript@5.7.2)
+      '@storybook/react-vite':
+        specifier: 'catalog:'
+        version: 8.4.6(@storybook/test@8.4.6(storybook@8.4.6(prettier@2.8.8)))(react-dom@18.3.1(react@18.3.1))(react@18.3.1)(rollup@4.28.0)(storybook@8.4.6(prettier@2.8.8))(typescript@5.7.2)(vite@5.4.11(@types/node@22.10.1))
+      '@storybook/test':
+        specifier: 'catalog:'
+        version: 8.4.6(storybook@8.4.6(prettier@2.8.8))
+      '@testing-library/jest-dom':
+        specifier: 'catalog:'
+        version: 6.6.3
+      '@testing-library/react':
+        specifier: 'catalog:'
+        version: 16.0.1(@testing-library/dom@10.4.0)(@types/react-dom@18.3.1)(@types/react@18.3.13)(react-dom@18.3.1(react@18.3.1))(react@18.3.1)
+      '@types/react':
+        specifier: ^18.3.12
+        version: 18.3.13
+      happy-dom:
+        specifier: 'catalog:'
+        version: 15.11.7
+      react:
+        specifier: ^18.3.1
+        version: 18.3.1
+      storybook:
+        specifier: 'catalog:'
+        version: 8.4.6(prettier@2.8.8)
+      tsup:
+        specifier: 'catalog:'
+        version: 8.3.5(jiti@2.4.1)(postcss@8.4.49)(tsx@4.19.2)(typescript@5.7.2)(yaml@2.6.1)
+      typescript:
+        specifier: 'catalog:'
+        version: 5.7.2
+      vitest:
+        specifier: 'catalog:'
+        version: 2.1.8(@types/node@22.10.1)(happy-dom@15.11.7)
 
   packages/icon:
     devDependencies:
