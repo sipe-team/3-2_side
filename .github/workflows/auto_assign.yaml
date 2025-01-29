@@ -1,0 +1,37 @@
+name: Auto Assign PR Creator
+
+on:
+  pull_request:
+    types: [opened]
+
+permissions:
+  pull-requests: write
+  contents: read
+
+jobs:
+  auto-assign:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          ref: ${{ github.event.pull_request.head.ref }}
+          fetch-depth: 0
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          cache: pnpm
+          node-version-file: .nvmrc
+
+      - name: Install dependencies for auto-assign
+        run: |
+          cd .github/workflows/auto-assign
+          pnpm install --frozen-lockfile
+
+      - name: Run Auto Assign Script
+        run: node auto_assign.js
+        working-directory: .github/workflows/auto-assign
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
